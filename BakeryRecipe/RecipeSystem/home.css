@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+
+.container-header{
+    background-image:
+        linear-gradient(to bottom, #dfaba4ef, #ffffff99),
+        url('https://img.freepik.com/free-photo/sweet-pastry-assortment-top-view_23-2148516578.jpg?w=740&t=st=1679021978~exp=1679022578~hmac=30ff4eac15ba95166571f950590e818ff713761860257a2d0be63eb26e24cedd');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 300px;
+    margin: 1% 2.5%;
+    border: 1px solid #A2673B;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(181, 181, 181, 0.7);
+}
+.title-header{
+    margin: 60px 0 0 0;
+}
+.title-header, .title{
+    font-family: "Croissant One", serif;
+}
+.title h2{
+    margin: 80px 0 20px 0;
+}
+.recommend-container .title{
+    margin: 2.5% 0 0 6%;
+    font-size: 20px;
+}
+.bi-search{
+    position: absolute;
+    margin: -18px -25px;
+    width: 25px;
+    height: 25px;
+}
+p{
+    margin-bottom: 50px;
+}
+.center{
+    text-align: center;
+}
+.box-1{
+    display: flex;
+    justify-content: space-between;
+}
+.save-1, .save-2, .save-3, .save-4{
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    top: 17%;
+    left: 77%;
+    stroke: #000;
+    width: 35px;
+    fill: red;
+    fill-opacity: 0;
+    transition: transform .5s;
+}
+.bi-bookmark-fill-click-1, .bi-bookmark-fill-click-2, .bi-bookmark-fill-click-3, .bi-bookmark-fill-click-4{
+    animation: anim-click .6s ease-out forwards;
+    stroke: red;
+}
+.circle{
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 73.5%;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.bi-star{
+    font-size: 30px;
+    margin: 0 5px 0 0;
+}
+.recommend{
+    background-image:
+        linear-gradient(to bottom, #cff0d4a2, #cff0d41f),
+        url('https://miro.medium.com/v2/resize:fit:828/format:webp/0*3F3js8_Oq7EwbbCu');
+    background-size: cover;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    border: 1px solid #A2673B;
+    box-shadow: 0 0 10px rgba(181, 181, 181, 0.7);
+}
+.title-festival{
+    margin: 10px 0 0 0;
+    padding: 70px 0 0 0;
+    text-align: center;
+    font-family: "Rammetto One", sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #A2673B;
+    text-transform: uppercase;
+}
+.in-recommend-container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+.recommend-card{
+    margin: 50px 30px 50px 30px;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+}
+.recommend-card img{
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #A2673B;
+}
+.recommend-card p{
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: #e89a8ec1;
+    padding: 10px;
+    margin-top: -50px;
+    border-radius: 15px;
+    position: absolute;
+    width: 350px;
+}
+.recommend-card img:hover{
+    opacity: 0.8;
+    transition: .5s;
+}
+.recommend-card p:hover{
+    color: #A2673B;
+    transition: .3s;
+}
+
+@keyframes anim-click{
+    0%{
+        transform: scale(1);
+        fill-opacity: 0;
+    }
+    25%{
+        fill-opacity: 1;
+    }
+    45%{
+        transform: scale(0.8);
+    }
+    70%{
+        transform: scale(1.2);
+    } 
+    100%{
+        transform: scale(1);
+        fill-opacity: 1;
+    } 
+}

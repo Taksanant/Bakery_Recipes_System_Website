@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" type="image/png" href="https://th.bing.com/th/id/R.26d49584bc03f16b3c5fa748db768349?rik=Zl3hzoN%2fQyGgWw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9ip%2f6rR%2f9ip6rRepT.png&ehk=tKa%2fEG8Lp4M0Ucz3N5S4iOs7jHriCOnmYss6jkpUsDs%3d&risl=&pid=ImgRaw&r=0">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" type="text/css" href="./aboutus.css">
+    <link rel="stylesheet" type="text/css" href="./navbar.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Nova+Square&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    body{
+        background-color: #FBF7F4;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar{
+        border-bottom: 1px solid #000;
+    }
+    .topbar{
+        /* background-color: #666; */
+        display: flex;  /* Make Flex container */
+        justify-content: center; /* Center horizontally */
+    }
+    .topbar ul{
+        list-style-type: none;
+        margin: 10px;
+        padding: 0;
+        font-size: 20px;
+    }
+    .topbar li{
+        display: inline-block;
+        /* float: left; */
+    }
+    a{
+        text-decoration: none;
+    }
+    a:link, a:visited{
+        color: #000;
+    }
+    .topbar a{
+        padding: 15px 20px;
+        text-decoration: none;
+        display: inline-block;
+        color: #000;
+    }
+    .topbar a:hover{
+        color: #A2673B;
+        transition: .3s;
+    }
+    .active{
+        font-weight: bold;
+    }
+
+    .sweetmade{
+        /* float: left; */
+        position: absolute;
+        margin: 20px 40px;
+        font-family: "Poller One", serif;
+        font-size: 35px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .leftbar{
+        /* position: absolute; */
+        float: right;
+        margin: -60px 40px;
+    }
+
+    .bx{
+        font-size: 50px;
+        cursor: pointer;
+    }
+    
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: lightgrey;}
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        transition: .5s;
+        display: block;
+        right: 5%;
+    }
+
+    .breadcrumb{
+        margin: 2% 0 0 5%;
+    }
+
+    /* Style the list */
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+    }
+    
+    /* Display list items side by side */
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+    }
+    
+    /* Add a slash symbol (/) before/behind each list item */
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: #000;
+        content: "\003E";
+    }
+    
+    /* Add a color to all links inside the list */
+    ul.breadcrumb li a {
+        color: #000;
+        text-decoration: none;
+    }
+    
+    /* Add a color on mouse-over */
+    ul.breadcrumb li a:hover {
+        color: #A2673B;
+        transition: .3s;
+    }
+
+    footer{
+        height: 100px;
+    }
+        .container-1{
+        display: flex;
+        background-color: #F0D3CF;
+        /* justify-content: space-between; */
+        height: 600px;
+    }
+    .image{
+        position: absolute;
+        border-radius: 20px;
+        width: 400px;
+        height: 500px;
+        object-fit: cover;
+        margin: 50px 0 0 1050px;
+    }
+    .text{
+        margin: 50px;
+    }
+    h2{
+        font-family: "Poller One", serif;
+    }
+    .text h2{
+        margin: 0 0 20px 20px;
+    }
+    .text p{
+        background-color: #FBF7F4;
+        margin-left: 40px;
+        padding: 20px 25px;
+        width: 1000px;
+        height: 410px;
+        border-radius: 20px;
+    }
+    .container-2{
+        display: flex;
+        justify-content: space-between;
+        margin: 50px;
+    }
+    .upper{
+        text-transform: uppercase;
+        margin: 0 0 20px 20px;
+    }
+    .contact-box {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+    .contact-box img {
+        width: 45px;
+        margin: 0 15px 5px 15px;
+    }
+    .follow-us{
+        margin-right: 75px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .follow-us img {
+        width: 45px;
+        height: 45px;
+        margin: 10px;
+    }
+
+</style>
+<body>
+    <nav class="navbar">
+        <a href="Home.php" class="sweetmade">Sweetmade</a>
+        <div class="topbar">
+            <ul>
+                <li><a href="Home.php">Home</a></li>
+                <li><a href="Recipes.php">Recipes</a></li>
+                <li><a href="Community.php">Community</a></li>
+                <li><a href="AboutUs.php" class="active">About Us</a></li>
+            </ul>
+        </div>
+        <div class="leftbar">
+            <a href="Bakinglist.php">
+                <i class='bx bx-heart-circle'></i>
+            </a>
+            <div class="dropdown">
+                <i class='bx bxs-user-circle'></i>
+                <div class="dropdown-content">
+                    <a href="Profile.php">Profile</a>
+                    <a href="index.php">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-1">
+        <div class="text">
+            <h2>About us</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <img src="https://i0.wp.com/funfoodlists.com/wp-content/uploads/2024/02/types-of-bread-that-start-with-the-letter-o.png?w=680&ssl=1" alt="cooking" class="image">
+    </div>
+
+    <div class="container-2">
+        <div class="contact">
+            <h2 class="upper">Contact us</h2>
+            <div class="contact-box">
+                <img src="https://cdn-icons-png.freepik.com/256/455/455705.png">
+                <p>000-000-0000</p>
+            </div>
+            <div class="contact-box">
+                <img src="https://cdn-icons-png.freepik.com/256/3178/3178158.png">
+                <p>sweetmade@mail.com</p>
+            </div>
+            <div class="contact-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/3178/3178137.png">
+                <p>Hogwarts Castle, <br>Highlands, Scotland, <br>Great Britain.</p>
+            </div>
+        </div>
+        
+        <div class="follow-us">
+            <h2 class="upper">Follow us</h2>
+            <div class="social">
+                <a href=""><img src="https://static-00.iconduck.com/assets.00/facebook-icon-512x512-seb542ju.png" alt="facebook"></a>
+                <a href=""><img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-icon-png-image_6315974.png" alt="instagram"></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="twitter" style="border-radius: 5px;"></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="in"></a>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+    
+</body>
+</html>
+
+<?php
+?>

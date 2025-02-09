@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes Post</title>
+    <link rel="icon" type="image/png" href="https://th.bing.com/th/id/R.26d49584bc03f16b3c5fa748db768349?rik=Zl3hzoN%2fQyGgWw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9ip%2f6rR%2f9ip6rRepT.png&ehk=tKa%2fEG8Lp4M0Ucz3N5S4iOs7jHriCOnmYss6jkpUsDs%3d&risl=&pid=ImgRaw&r=0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://demo.plantpot.works/assets/css/normalize.css">
+    <link rel="stylesheet" href="https://use.typekit.net/opg3wle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" type="text/css" href="./navbar.css">
+    <link rel="stylesheet" type="text/css" href="./recipes_post.css">
+    
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Nova+Square&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #FBF7F4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    border-bottom: 1px solid #000;
+}
+.topbar{
+    /* background-color: #666; */
+    display: flex;  /* Make Flex container */
+    justify-content: center; /* Center horizontally */
+}
+.topbar ul{
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    font-size: 20px;
+}
+.topbar li{
+    display: inline-block;
+    /* float: left; */
+}
+a{
+    text-decoration: none;
+}
+a:link, a:visited{
+    color: #000;
+}
+.topbar a{
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+}
+.topbar a:hover{
+    color: #A2673B;
+    transition: .3s;
+}
+.active{
+    font-weight: bold;
+}
+
+.sweetmade{
+    /* float: left; */
+    position: absolute;
+    margin: 20px 40px;
+    font-family: "Poller One", serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.leftbar{
+    /* position: absolute; */
+    float: right;
+    margin: -60px 40px;
+}
+
+.bx{
+    font-size: 50px;
+    cursor: pointer;
+}
+  
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: lightgrey;}
+  
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    transition: .5s;
+    display: block;
+    right: 5%;
+}
+
+.breadcrumb{
+    margin: 2% 0 0 5%;
+}
+
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #000;
+    content: "\003E";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #000;
+    text-decoration: none;
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #A2673B;
+    transition: .3s;
+}
+
+footer{
+    height: 100px;
+}
+    .post-container{
+    margin: 1% 0 0 6%;
+}
+.recipe-image{
+    width: 320px;
+    height: 320px;
+    border-radius: 7%;
+    margin: 10px 0;
+    object-fit: cover;
+}
+.post-box{
+    display: flex;
+    font-size: 15px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+}
+.date-time{
+    text-align: right;
+}
+.right{
+    font-size: 20px;
+    padding-left: 50px;
+    padding-top: 15px;
+}
+.box-1, .box-3, .box-4, .box-5, .box-6{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.description-1, .comment-box{
+    background-color: #F0D3CF;
+    width: 90%;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 2% 0 0 6%;
+}
+.bowl{
+    width: 40px;
+    margin: 0 0 0 20px;
+    transform: scaleX(-1);
+}
+.in-box-6{
+    display: flex;
+    flex-direction: column;
+}
+.ingredients{
+    margin: 5px 150px 5px 40px;
+}
+.bi-person-circle{
+    font-size: 35px;
+}
+.comment-icon{
+    margin: 0 0 0 10px;
+}
+.name-baker{
+    margin: 10px 20px;
+}
+.bi-chat{
+    font-size: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+.bi-clock{
+    font-size: 30px;
+}
+ul.prep{
+    margin: 0 70px 0 50px;
+    font-size: 15px;
+}
+.cooking{
+    width: 40px;
+    margin-right: 20px;
+}
+ol{
+    margin: 10px 50px 40px 25px;
+}
+.description-2{
+    margin: 2% 0 0 7.5%;
+}
+.box-7{
+    margin-top: 20px;
+}
+li{
+    line-height: 25px;
+}
+.rate{
+    display: flex;
+    margin: 10px 0 0 0;
+}
+.rate-all-1{
+    margin: 0 20px 0 0;
+}
+.rate-all-2{
+    margin: 0 0 0 20px;
+}
+.box-8{
+    display: flex;
+}
+.comment-date-time{
+    float: right;
+    margin: 0 20px 0 0;
+    font-size: 15px;
+}
+.name-comment{
+    margin: 10px 15px;
+    font-weight: 600;
+}
+.comment-detail{
+    margin: 0 15px 10px 60px;
+    text-align: left;
+}
+
+#comment{
+    background-color: #F5E7E5;
+    border-radius: 5px;
+    margin: 15px 0 0 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.list {
+    margin: 0px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+.list-element {
+    width: 100%;
+    margin: 25px 0px;
+    border-radius: 5px;
+    padding: 10px 0px;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #000;
+    /* box-shadow: 0px 0px 6px 0px #848484; */
+    display: none;
+    background-color: #F5E7E5;
+}
+#loadmore {
+    margin: auto;
+    display: block;
+    padding: 10px 45px;
+    border-radius: 5px;
+    border: 2px solid #A2673B;
+    background-color: #DFABA4;
+    cursor: pointer;
+}
+.list .list-element:nth-child(1) {
+    display: block;
+}
+.list .list-element:nth-child(2) {
+    display: block;
+}
+  
+.heart{
+    cursor: pointer;
+    pointer-events: all;
+    fill: red;
+    fill-opacity: 0;
+    margin: 10px 10px 0 -15px;
+    stroke: #000;
+    stroke-width: 3px;
+    transition: transform .5s;
+    width: 70px;
+}
+
+.heart-click{
+    animation: anim-click .6s ease-out forwards;
+    stroke: red;
+}
+
+.bi-bookmark-fill{
+    cursor: pointer;
+    margin: 0 20px 0 50px;
+    fill: red;
+    fill-opacity: 0;
+    stroke: #000;
+    /* stroke-width: 1px; */
+    transition: transform .5s;
+    width: 30px;
+}
+
+/* &:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+} */
+
+.bi-bookmark-fill-click{
+    animation: anim-click .6s ease-out forwards;
+    stroke: red;
+}
+  
+@keyframes anim-click{
+    0%{
+        transform: scale(1);
+        fill-opacity: 0;
+    }
+    25%{
+        fill-opacity: 1;
+    }
+    45%{
+        transform: scale(0.8);
+    }
+    70%{
+        transform: scale(1.2);
+    } 
+    100%{
+        transform: scale(1);
+        fill-opacity: 1;
+    } 
+}
+</style>
+<body>
+    <nav class="navbar">
+        <a href="./home.html" class="sweetmade">Sweetmade</a>
+        <div class="topbar">
+            <ul>
+                <li><a href="Home.php">Home</a></li>
+                <li><a href="Recipes.php" class="active">Recipes</a></li>
+                <li><a href="Community.php">Community</a></li>
+                <li><a href="AboutUs.php">About Us</a></li>
+            </ul>
+        </div>
+        <div class="leftbar">
+            <a href="./bakinglist.html">
+                <i class='bx bx-heart-circle'></i>
+            </a>
+            <div class="dropdown">
+                <i class='bx bxs-user-circle'></i>
+                <div class="dropdown-content">
+                    <a href="Profile.php">Profile</a>
+                    <a href="index.php">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- breadcrumb -->
+    <ul class="breadcrumb">
+        <li><a href="">Home</a></li>
+        <li><a href="./recipes.html">Recipes</a></li>
+        <li><a href="">Cookies</a></li>
+        <li class="active">French Macaroon</li>
+    </ul>
+
+    <div class="post-container">
+        <div class="title">
+            <h2>French Macaroon</h2>
+        </div>
+        <div class="post-box">
+            <div class="left">
+                <img src="https://preppykitchen.com/wp-content/uploads/2020/04/macarons-blog-1.jpg" alt="French Macaroon" class="recipe-image">
+                <span class="date-time">Published: Jan 1, 2024 | 12:08 A.M.</span>
+            </div>
+            <div class="right">
+                <div class="box-1">
+                    <i class="bi bi-person-circle"></i>
+                    <div class="name-baker">
+                        <span>John</span>
+                    </div>
+                </div>
+                <div class="box-2">
+                    <span>French macaroon : Make easy macarons for your sweetheart. 💖</span>
+                </div>
+                <div class="box-3">
+                    <svg class="heart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g class=>
+                        <path d="M50.001,68.908c-0.127,0-0.252-0.031-0.365-0.094c-0.915-0.512-22.395-12.631-22.395-24.62   c0-7.593,5.09-13.104,12.104-13.104c3.89,0,8.203,2.599,10.656,5.261c2.451-2.662,6.765-5.261,10.655-5.261   c7.014,0,12.104,5.511,12.104,13.104c0,11.989-21.479,24.108-22.394,24.62C50.253,68.877,50.126,68.908,50.001,68.908z"/></g>
+                    </svg>
+                    
+                    <span>Like</span>
+                    
+                    <a href="#comment">
+                        <i class="bi bi-chat"></i>
+                        <span>Comment</span>
+                    </a>
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                        <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"/>
+                    </svg>
+                    <span>Save</span>
+                </div>
+                <div class="box-4">
+                    <i class="bi bi-clock"></i>
+                    <ul class="prep">
+                        <li>
+                            Prep : 25 mins
+                        </li>
+                        <li>
+                            Cook : 1 hr and 10 mins
+                        </li>
+                    </ul>
+                    <img src="./img/room-service.png" alt="cook" class="cooking">
+                    <span>36 Macarons</span>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="description-1">
+        <div class="box-5">
+            <h3>Ingredients</h3>
+            <img src="./img/bowl.png" alt="bowl" class="bowl">
+        </div>
+        <div class="box-6">
+            <div class="in-box-6-1">
+                <span>1. For the Cookie</span>
+            <ul class="ingredients">
+                <li>100 g egg whites room temperature 3 large eggs</li>
+                <li>140 g almond flour 1 1/2 cups</li>
+                <li>90 g granulated sugar just under 1/2 cup</li>
+                <li>130 g powdered sugar 1 cup</li>
+                <li>1 tsp vanilla 5mL</li>
+                <li>1/4 tsp cream of tartar 800mg</li>
+            </ul>
+            </div>
+            <div class="in-box-6-2">
+                <span>2. For the Buttercream</span>
+            <ul class="ingredients">
+                <li>1 cup unsalted butter softened 226g</li>
+                <li>5 egg yolks</li>
+                <li>1/2 cup granulated sugar 100g</li>
+                <li>1 tsp vanilla</li>
+                <li>3 tbsp water 30mL</li>
+                <li>1 pinch salt</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="description-2">
+        <h3>Method</h3>
+        <div class="box-7">
+            <div class="in-box-7-1">
+                <span>For the Macarons:</span>
+                <ol>
+                    <li>Sift the confectioners sugar and almond flour into a bowl.</li>
+                    <li>Add the room temperature egg whites into a very clean bowl.</li>
+                    <li>Using an electric mixer, whisk egg whites. Once they begin to foam add the cream of tartar and then SLOWLY add the granulated sugar.</li>
+                    <li>Add the food coloring (if desired) and vanilla then mix in. Continue to beat until stiff peaks form.</li>
+                    <li>Begin folding in the 1/3 of the dry ingredients.</li>
+                    <li>Be careful to add the remaining dry ingredients and fold gently.</li>
+                    <li>The final mixture should look like flowing lava, and be able to fall into a figure eight without breaking. Spoon into a piping bag with a medium round piping tip and you’re ready to start piping.</li>
+                    <li>Pipe one inch dollops onto a baking sheet lined with parchment paper (this should be glued down with dabs of batter). Tap on counter several times to release air bubbles. Allow to sit for about 40 minutes before placing in oven.</li>
+                    <li>Bake at 300F for 12-15 minutes, rotate tray after 7 minutes. Allow to cool completely before removing from baking sheet.</li>
+                </ol>
+            </div>
+            <div class="in-box-7-2">
+                <span>For the French Buttercream Filling:</span>
+                <ol>
+                    <li>Combine sugar and water in medium saucepan. Heat over low heat while stirring until sugar dissolves. Increase heat to medium- high and bring to a boil</li>
+                    <li>Put egg yolks in a stand-mixer fitted with a whisk attachment and beat until thick and foamy.</li>
+                    <li>Cook the sugar and water syrup until it reaches 240 degrees F. Immediately remove from heat. With mixer running, SLOWLY drizzle hot syrup into bowl with yolks.</li>
+                    <li>Continue mixing until the bottom of the bowl is cool to the touch and the yolk mixture has cooled to room temperature.</li>
+                    <li>Add in butter one cube at a time allowing each piece to incorporate before adding the next. Add vanilla and salt. Continue mixing until buttercream is smooth and creamy. (About 5-6 minutes.) Add food coloring if desired.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="comment-box">
+        <div class="rate">
+            <h3 class="rate-all-1">Overall Rating</h3>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+            <i class="bi bi-star"></i>
+            <div class="rate-all-2">
+                266 ratings
+            </div>
+        </div>
+
+    <!-- List of your items -->
+	<div class="list">
+	    <div class="list-element">
+            <div class="comment-date-time">11 hours ago</div>
+            <div class="box-8">
+                <i class="bi bi-person-circle comment-icon"></i>
+                <div class="name-comment">
+                    <span>brianwelsh</span>
+                </div>
+            </div>
+            <div class="comment-detail">
+                <p>
+                    This was really lovely. I did wonder, as others had suggested, that there were not enough vanilla but seemed to be ok. Also I noticed that there were a few comments about it being too sweet. I found seasoning it ,as advised, gave a perfect balance. Also great those there’s more for the freezer!
+                </p>
+            </div>
+        </div>
+	    <div class="list-element">
+            <div class="comment-date-time">2 weeks ago</div>
+            <div class="box-8">
+                <i class="bi bi-person-circle comment-icon"></i>
+                <div class="name-comment">
+                    <span>SgedmundTHaNArT0</span>
+                </div>
+            </div>
+            <div class="comment-detail">
+                <p>
+                    Tasty, but quite rich, and way too much work involved!
+                </p>
+            </div>
+        </div>
+	    <div class="list-element">
+            <div class="comment-date-time">2 weeks ago</div>
+            <div class="box-8">
+                <i class="bi bi-person-circle comment-icon"></i>
+                <div class="name-comment">
+                    <span>User</span>
+                </div>
+            </div>
+            <div class="comment-detail">
+                <p>
+                    Comment
+            </div>
+        </div>
+	    <div class="list-element">
+            <div class="comment-date-time">2 weeks ago</div>
+            <div class="box-8">
+                <i class="bi bi-person-circle comment-icon"></i>
+                <div class="name-comment">
+                    <span>User</span>
+                </div>
+            </div>
+            <div class="comment-detail">
+                <p>
+                    Comment
+                </p>
+            </div>
+        </div>
+	</div>
+
+	<!-- Load More Button -->
+	<button id="loadmore">Show More</button>
+
+        <input type="text" name="comment" id="comment" placeholder="Add your comment...">
+    </div>
+
+    <footer></footer>
+
+    <script src="script-recipes-post.js"></script>
+    <script>
+        const Favorite = document.querySelector('.heart');
+
+document.querySelector('.heart').addEventListener('click', () => {
+    Favorite.classList.toggle('heart-click');
+});
+
+const Save = document.querySelector('.bi-bookmark-fill');
+
+document.querySelector('.bi-bookmark-fill').addEventListener('click', () => {
+    Save.classList.toggle('bi-bookmark-fill-click');
+});
+
+const loadmore = document.querySelector('#loadmore');
+
+let currentItems = 2;
+    loadmore.addEventListener('click', (e) => {
+      const elementList = [...document.querySelectorAll('.list .list-element')];
+          for (let i = currentItems; i < currentItems + 2; i++) {
+              if (elementList[i]) {
+                  elementList[i].style.display = 'block';
+              }
+          }
+      currentItems += 2;
+        
+      // Load more button will be hidden after list fully loaded
+          if (currentItems >= elementList.length) {
+              event.target.style.display = 'none';
+          }
+    });
+    </script>
+
+</body>
+</html>

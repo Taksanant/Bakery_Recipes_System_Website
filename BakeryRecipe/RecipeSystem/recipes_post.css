@@ -1,0 +1,214 @@
+.post-container{
+    margin: 1% 0 0 6%;
+}
+.recipe-image{
+    width: 320px;
+    height: 320px;
+    border-radius: 7%;
+    margin: 10px 0;
+    object-fit: cover;
+}
+.post-box{
+    display: flex;
+    font-size: 15px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+}
+.date-time{
+    text-align: right;
+}
+.right{
+    font-size: 20px;
+    padding-left: 50px;
+    padding-top: 15px;
+}
+.box-1, .box-3, .box-4, .box-5, .box-6{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.description-1, .comment-box{
+    background-color: #F0D3CF;
+    width: 90%;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 2% 0 0 6%;
+}
+.bowl{
+    width: 40px;
+    margin: 0 0 0 20px;
+    transform: scaleX(-1);
+}
+.in-box-6{
+    display: flex;
+    flex-direction: column;
+}
+.ingredients{
+    margin: 5px 150px 5px 40px;
+}
+.bi-person-circle{
+    font-size: 35px;
+}
+.comment-icon{
+    margin: 0 0 0 10px;
+}
+.name-baker{
+    margin: 10px 20px;
+}
+.bi-chat{
+    font-size: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+.bi-clock{
+    font-size: 30px;
+}
+ul.prep{
+    margin: 0 70px 0 50px;
+    font-size: 15px;
+}
+.cooking{
+    width: 40px;
+    margin-right: 20px;
+}
+ol{
+    margin: 10px 50px 40px 25px;
+}
+.description-2{
+    margin: 2% 0 0 7.5%;
+}
+.box-7{
+    margin-top: 20px;
+}
+li{
+    line-height: 25px;
+}
+.rate{
+    display: flex;
+    margin: 10px 0 0 0;
+}
+.rate-all-1{
+    margin: 0 20px 0 0;
+}
+.rate-all-2{
+    margin: 0 0 0 20px;
+}
+.box-8{
+    display: flex;
+}
+.comment-date-time{
+    float: right;
+    margin: 0 20px 0 0;
+    font-size: 15px;
+}
+.name-comment{
+    margin: 10px 15px;
+    font-weight: 600;
+}
+.comment-detail{
+    margin: 0 15px 10px 60px;
+    text-align: left;
+}
+
+#comment{
+    background-color: #F5E7E5;
+    border-radius: 5px;
+    margin: 15px 0 0 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.list {
+    margin: 0px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+.list-element {
+    width: 100%;
+    margin: 25px 0px;
+    border-radius: 5px;
+    padding: 10px 0px;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #000;
+    /* box-shadow: 0px 0px 6px 0px #848484; */
+    display: none;
+    background-color: #F5E7E5;
+}
+#loadmore {
+    margin: auto;
+    display: block;
+    padding: 10px 45px;
+    border-radius: 5px;
+    border: 2px solid #A2673B;
+    background-color: #DFABA4;
+    cursor: pointer;
+}
+.list .list-element:nth-child(1) {
+    display: block;
+}
+.list .list-element:nth-child(2) {
+    display: block;
+}
+  
+.heart{
+    cursor: pointer;
+    pointer-events: all;
+    fill: red;
+    fill-opacity: 0;
+    margin: 10px 10px 0 -15px;
+    stroke: #000;
+    stroke-width: 3px;
+    transition: transform .5s;
+    width: 70px;
+}
+
+.heart-click{
+    animation: anim-click .6s ease-out forwards;
+    stroke: red;
+}
+
+.bi-bookmark-fill{
+    cursor: pointer;
+    margin: 0 20px 0 50px;
+    fill: red;
+    fill-opacity: 0;
+    stroke: #000;
+    /* stroke-width: 1px; */
+    transition: transform .5s;
+    width: 30px;
+}
+
+/* &:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+} */
+
+.bi-bookmark-fill-click{
+    animation: anim-click .6s ease-out forwards;
+    stroke: red;
+}
+  
+@keyframes anim-click{
+    0%{
+        transform: scale(1);
+        fill-opacity: 0;
+    }
+    25%{
+        fill-opacity: 1;
+    }
+    45%{
+        transform: scale(0.8);
+    }
+    70%{
+        transform: scale(1.2);
+    } 
+    100%{
+        transform: scale(1);
+        fill-opacity: 1;
+    } 
+}

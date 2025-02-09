@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post</title>
+    <link rel="icon" type="image/png" href="https://th.bing.com/th/id/R.26d49584bc03f16b3c5fa748db768349?rik=Zl3hzoN%2fQyGgWw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f9ip%2f6rR%2f9ip6rRepT.png&ehk=tKa%2fEG8Lp4M0Ucz3N5S4iOs7jHriCOnmYss6jkpUsDs%3d&risl=&pid=ImgRaw&r=0">
+
+    <link rel="stylesheet" type="text/css" href="./add_post.css">
+    <link rel="stylesheet" type="text/css" href="./navbar.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Cormorant+Garamond|Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Megrim|Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Fredoka+One|Luckiest+Guy|Permanent+Marker|Rock+Salt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Concert+One|Fredoka+One|Luckiest+Guy|Permanent+Marker|Rock+Salt" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Nova+Square&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #FBF7F4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    border-bottom: 1px solid #000;
+}
+.topbar{
+    /* background-color: #666; */
+    display: flex;  /* Make Flex container */
+    justify-content: center; /* Center horizontally */
+}
+.topbar ul{
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    font-size: 20px;
+}
+.topbar li{
+    display: inline-block;
+    /* float: left; */
+}
+a{
+    text-decoration: none;
+}
+a:link, a:visited{
+    color: #000;
+}
+.topbar a{
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+}
+.topbar a:hover{
+    color: #A2673B;
+    transition: .3s;
+}
+.active{
+    font-weight: bold;
+}
+
+.sweetmade{
+    /* float: left; */
+    position: absolute;
+    margin: 20px 40px;
+    font-family: "Poller One", serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.leftbar{
+    /* position: absolute; */
+    float: right;
+    margin: -60px 40px;
+}
+
+.bx{
+    font-size: 50px;
+    cursor: pointer;
+}
+  
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: lightgrey;}
+  
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    transition: .5s;
+    display: block;
+    right: 5%;
+}
+
+.breadcrumb{
+    margin: 2% 0 0 5%;
+}
+
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #000;
+    content: "\003E";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #000;
+    text-decoration: none;
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #A2673B;
+    transition: .3s;
+}
+
+footer{
+    height: 100px;
+}
+    
+.input {
+    margin: auto;
+    width: 90%;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.box1, .box2, .box3, .box4{
+    margin: 30px 0px 10px 0px;
+}
+
+#input-box {
+    background: #F0D3CF;
+    border-radius: 3px;
+    border: 0;
+    width: 100%;
+    height: 100px;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
+.input-box {
+    background: #F0D3CF;
+    border-radius: 3px;
+    border: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
+input::placeholder{
+    font-size: 16px;
+}
+
+.Ingredient-name1::placeholder{
+    font-size: 16px;
+}
+
+.Ingredient-unit1::placeholder{
+    font-size: 16px;
+}
+
+.Ingredient-name1{
+    height: 40px;
+    width: 80%;
+    background: #F0D3CF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    
+}
+
+.Ingredient-unit1{
+    height: 40px;
+    width: 17.5%;
+    background: #F0D3CF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+}
+
+.btn-add-ingredients{
+    background: #eda0a0;
+    border: 2px;
+    border-radius: 14px;
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-submit{
+    background: #b6b4ec;
+    color: #000;
+    border: 2px;
+    border-radius: 16px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+h3{
+    font-weight: lighter;
+    font-size: 20px;
+}
+.bi-x-lg{
+    font-size: 20px;
+}
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
+
+.uploader {
+  display: block;
+  clear: both;
+  /* margin: 0 auto; */
+  width: 100%;
+  /* max-width: 100%; */
+  margin-bottom: 250px;
+
+  label {
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: #F0D3CF;
+    border-radius: 7px;
+    transition: all .2s ease;
+    user-select: none;
+    cursor: pointer;
+
+
+  }
+
+  #response {
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+    #messages {
+      margin-bottom: .5rem;
+    }
+  }
+
+  #file-image {
+    display: inline;
+    margin: 0 auto .5rem auto;
+    width: auto;
+    height: auto;
+    max-width: 180px;
+    &.hidden {
+      display: none;
+    }
+  }
+  
+#notimage {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+}
+
+progress, .progress {
+    appearance: none;
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 180px;
+    height: 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+  }
+
+  .progress[value]::-webkit-progress-bar {
+    border-radius: 4px;
+    background-color: #eee;
+  }
+
+  .progress[value]::-webkit-progress-value {
+    background: linear-gradient(to right, darken(#454cad,8%) 0%, #454cad 50%);
+    border-radius: 4px; 
+  }
+  .progress[value]::-moz-progress-bar {
+    background: linear-gradient(to right, darken(#454cad,8%) 0%, #454cad 50%);
+    border-radius: 4px; 
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+}
+</style>
+<body>
+    <nav class="navbar">
+        <a href="./home.html" class="sweetmade">Sweetmade</a>
+        <div class="topbar">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./recipes.html">Recipes</a></li>
+                <li><a href="./community.html">Community</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="leftbar">
+            <a href="./bakinglist.html">
+                <i class='bx bx-heart-circle'></i>
+            </a>
+            <div class="dropdown">
+                <i class='bx bxs-user-circle'></i>
+                <div class="dropdown-content">
+                    <a href="./profile.html">Profile</a>
+                    <a href="./sign-in.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class = "input">
+        <div class="box1">
+            <h3>Recipe Name</h3>
+            <input class = "input-box" type="text" placeholder="Your recipe name..." required>
+        </div>
+        <div class="box2">
+            <label for="picture">Upload Photo</label>
+            <!-- <textarea id="input-box" name="input-box" placeholder="input your image" required></textarea> -->
+            <!-- Upload  -->
+            <form id="file-upload-form" class="uploader">
+                <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+                <label for="file-upload" id="file-drag">
+                    <img id="file-image" src="#" alt="Preview" class="hidden">
+                    <div id="start">
+                        <div style="font-size: 15px; color: rgb(0, 0, 0, 0.5);">
+                            <i class="bi bi-image" style="font-size: 50px;"></i><br>
+                            Uplode your bakery picture <br>
+                            *Please use pictures of your bakery, GIF, <br> JPG, or PNG files, size less than 1 Mb.</div>
+                        <!-- <span id="file-upload-btn" class="btn btn-primary">Select a file</span> -->
+                    </div>
+                    <div id="response" class="hidden">
+                        <div id="messages"></div>
+                        <progress class="progress" id="file-progress" value="0">
+                            <span>0</span>%
+                        </progress>
+                    </div>
+                </label>
+            </form>
+        </div>
+        <div class="box3">
+            <h3>Description</h3>
+            <textarea id="input-box" name="input-box" placeholder="Description..." required></textarea>
+        </div>
+        <div class="box4">
+            <h3>Ingredients</h3>
+            <input class="Ingredient-name1" type="text" placeholder="Sugar" required>
+            <input class="Ingredient-unit1" type="text" placeholder="1 cup" required>
+            <a href=""><i class="bi bi-x-lg"></i></a>
+            <form action="">
+                <button class="btn-add-ingredients" type="submit">+ add ingredients</button>
+            </form>
+        </div>
+        <div class="box5">
+            <h3>Medthod</h3>
+            <textarea id="input-box" name="input-box" placeholder="Your medthod..." required></textarea>
+        </div>
+
+        <form action="">
+            <button class="btn-submit" type="submit">Submit</button>
+        </form>
+        
+    </div>
+
+    <footer></footer>
+
+    <script src="script-add-post.js"></script>
+    <script>
+        // File Upload
+// 
+function ekUpload(){
+    function Init() {
+  
+      console.log("Upload Initialised");
+  
+      var fileSelect    = document.getElementById('file-upload'),
+          fileDrag      = document.getElementById('file-drag'),
+          submitButton  = document.getElementById('submit-button');
+  
+      fileSelect.addEventListener('change', fileSelectHandler, false);
+  
+      // Is XHR2 available?
+      var xhr = new XMLHttpRequest();
+      if (xhr.upload) {
+        // File Drop
+        fileDrag.addEventListener('dragover', fileDragHover, false);
+        fileDrag.addEventListener('dragleave', fileDragHover, false);
+        fileDrag.addEventListener('drop', fileSelectHandler, false);
+      }
+    }
+  
+    function fileDragHover(e) {
+      var fileDrag = document.getElementById('file-drag');
+  
+      e.stopPropagation();
+      e.preventDefault();
+  
+      fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+    }
+  
+    function fileSelectHandler(e) {
+      // Fetch FileList object
+      var files = e.target.files || e.dataTransfer.files;
+  
+      // Cancel event and hover styling
+      fileDragHover(e);
+  
+      // Process all File objects
+      for (var i = 0, f; f = files[i]; i++) {
+        parseFile(f);
+        uploadFile(f);
+      }
+    }
+  
+    // Output
+    function output(msg) {
+      // Response
+      var m = document.getElementById('messages');
+      m.innerHTML = msg;
+    }
+  
+    function parseFile(file) {
+  
+      console.log(file.name);
+      output(
+        '<strong>' + encodeURI(file.name) + '</strong>'
+      );
+      
+      // var fileType = file.type;
+      // console.log(fileType);
+      var imageName = file.name;
+  
+      var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+      if (isGood) {
+        document.getElementById('start').classList.add("hidden");
+        document.getElementById('response').classList.remove("hidden");
+        document.getElementById('notimage').classList.add("hidden");
+        // Thumbnail Preview
+        document.getElementById('file-image').classList.remove("hidden");
+        document.getElementById('file-image').src = URL.createObjectURL(file);
+      }
+      else {
+        document.getElementById('file-image').classList.add("hidden");
+        document.getElementById('notimage').classList.remove("hidden");
+        document.getElementById('start').classList.remove("hidden");
+        document.getElementById('response').classList.add("hidden");
+        document.getElementById("file-upload-form").reset();
+      }
+    }
+  
+    function setProgressMaxValue(e) {
+      var pBar = document.getElementById('file-progress');
+  
+      if (e.lengthComputable) {
+        pBar.max = e.total;
+      }
+    }
+  
+    function updateFileProgress(e) {
+      var pBar = document.getElementById('file-progress');
+  
+      if (e.lengthComputable) {
+        pBar.value = e.loaded;
+      }
+    }
+  
+    function uploadFile(file) {
+  
+      var xhr = new XMLHttpRequest(),
+        fileInput = document.getElementById('class-roster-file'),
+        pBar = document.getElementById('file-progress'),
+        fileSizeLimit = 1024; // In MB
+      if (xhr.upload) {
+        // Check if file is less than x MB
+        if (file.size <= fileSizeLimit * 1024 * 1024) {
+          // Progress bar
+          pBar.style.display = 'inline';
+          xhr.upload.addEventListener('loadstart', setProgressMaxValue, false);
+          xhr.upload.addEventListener('progress', updateFileProgress, false);
+  
+          // File received / failed
+          xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4) {
+              // Everything is good!
+  
+              // progress.className = (xhr.status == 200 ? "success" : "failure");
+              // document.location.reload(true);
+            }
+          };
+  
+          // Start upload
+          xhr.open('POST', document.getElementById('file-upload-form').action, true);
+          xhr.setRequestHeader('X-File-Name', file.name);
+          xhr.setRequestHeader('X-File-Size', file.size);
+          xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+          xhr.send(file);
+        } else {
+          output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
+        }
+      }
+    }
+  
+    // Check for the various File API support.
+    if (window.File && window.FileList && window.FileReader) {
+      Init();
+    } else {
+      document.getElementById('file-drag').style.display = 'none';
+    }
+  }
+  ekUpload();
+    </script>
+    
+</body>
+</html>
